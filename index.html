@@ -27,28 +27,28 @@
       z-index: 1; /* Al fondo */
     }
 
-    /* --- TEXTO DE LA PROPUESTA ARRIBA --- */
+    /* --- TEXTO DE LA PROPUESTA (JUSTO EN EL TALLO) --- */
     .proposal-container {
       position: absolute;
-      top: 10%; /* Lo ubica en la parte superior de la pantalla */
+      top: 62%; /* Lo baja exacto a la altura del tallo */
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       width: 90%; 
       text-align: center;
-      z-index: 2; /* Por encima de la rosa */
-      pointer-events: none; /* Para que no estorbe si toca la pantalla */
+      z-index: 10; /* Bien por encima de todo */
+      pointer-events: none; 
     }
 
     .proposal-text {
-      font-size: 24px;
+      font-size: 18px; /* Tamaño ideal para que encaje elegante en ese espacio */
       font-weight: bold;
       line-height: 1.4;
       margin: 0;
-      color: #ffccdf; /* Mismo color del pétalo */
+      color: #ffccdf; 
       text-shadow: 
         0 0 5px #ffccdf,
         0 0 10px #ffccdf,
-        0 0 20px #ff1053, /* Brillo fucsia */
+        0 0 20px #ff1053, 
         0 0 40px #ff1053;
       animation: neonPulse 2s infinite alternate;
     }
@@ -218,7 +218,6 @@
     }
   </style>
 
-  <!-- MAPA DE IMPORTACIÓN -->
   <script type="importmap">
     {
       "imports": {
@@ -230,15 +229,12 @@
 </head>
 <body>
 
-  <!-- Fondo 3D -->
   <div id="bg-canvas"></div>
 
-  <!-- TEXTO DE LA PROPUESTA ARRIBA -->
   <div class="proposal-container">
     <h1 class="proposal-text">Liz Reyes, nos conocimos de forma inusual pero tu belleza me cautivó. ¿Quieres ser mi novia?</h1>
   </div>
 
-  <!-- Reproductor estilo Spotify -->
   <div class="player-wrapper">
     <div class="top-row">
       <img src="portada.jpeg" alt="Portada" class="album-art">
@@ -269,7 +265,6 @@
     <audio id="audio-player" src="cancion.mp3"></audio>
   </div>
 
-  <!-- SCRIPT 1: LÓGICA DEL REPRODUCTOR -->
   <script>
     const audio = document.getElementById('audio-player');
     const playBtn = document.getElementById('play-btn');
@@ -320,7 +315,6 @@
     });
   </script>
 
-  <!-- SCRIPT 2: LA ROSA 3D -->
   <script type="module">
     import * as THREE from 'three';
     import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
